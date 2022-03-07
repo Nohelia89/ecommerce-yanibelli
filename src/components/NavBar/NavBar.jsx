@@ -1,5 +1,6 @@
 
 import {Container, Navbar, Nav} from 'react-bootstrap';
+import Widget from '../Widget/Widget';
 function NavBar() {
     return (
       
@@ -15,9 +16,9 @@ function NavBar() {
             <Nav.Link href="#pricing">Consolas</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Contacto</Nav.Link>
+            <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-              Iniciar Sesión
+            <Widget/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
