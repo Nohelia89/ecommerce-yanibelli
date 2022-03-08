@@ -12,7 +12,7 @@ function App() {
     <div className = "App" >
 <NavBar/>
 <ItemListContainer saludo="Hola soy ItemListContainer" />
-<Contador stock="10" inicial = "1" onAdd="5"/>
+<Contador stock={10} inicial = {1} />
 
 
         </div >
