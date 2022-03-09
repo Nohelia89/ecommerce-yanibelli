@@ -2,7 +2,7 @@
 import {Container, Navbar, Nav} from 'react-bootstrap';
 import Widget from '../Widget/Widget';
 function NavBar() {
-    return (
+    return ( 
       
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
