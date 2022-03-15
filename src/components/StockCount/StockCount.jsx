@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
-function Contador({stock,inicial}) {
+function StockCount({stock,initial}) {
 
-const [count, setCount] = useState (inicial)
+const [count, setCount] = useState (initial)
 
 const handleSum = () => {
     if (count< stock){
@@ -30,11 +30,11 @@ const handleRest = () => {
     <Button variant="dark" onClick={handleRest}>-</Button>
     <div>
    
-    <Button variant="dark" onClick={onAdd}>Agregar al carrito</Button>
+    <Button variant="dark" onClick={onAdd}>Add to Cart</Button>
     </div>
     </>
 
   )
 }
 
-export default Contador
+export default StockCount
