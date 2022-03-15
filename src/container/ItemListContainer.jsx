@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { CardGroup } from "react-bootstrap"
 import ItemList from "../components/ItemList/ItemList"
 
 
@@ -22,11 +23,12 @@ const gfetch = new Promise((resolve, reject) => {
 })
 
 
-function ItemListContainer({ saludo }) {
+function ItemListContainer() {
 
-  const [bool, setBool] = useState(true)
+  //const [bool, setBool] = useState(true)
   const [prods, setProds] = useState([])
   const [loading, setLoading] = useState(true)
+
 
 
   useEffect(() => {
@@ -42,10 +44,10 @@ function ItemListContainer({ saludo }) {
   return (
 
     <>
-      <button onClick={() => setBool(!bool)} >click </button>
-      <div>{saludo}</div>
+      
+      
      
-      { loading ? <h2>Loading...</h2> : <ItemList products={prods}/>}
+      { loading ? <h2>Loading...</h2> : <CardGroup><ItemList products={prods}/></CardGroup>}
 
     </>
   )

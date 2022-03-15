@@ -9,7 +9,7 @@ function Item ({prod}) {
        
             <div > 
              
-              <Card style={{ width: '18rem' }}>
+              <Card style={{ width: '18rem' } }>
                 <Card.Img variant="top" src={prod.url} />
                 <Card.Body>
                   <Card.Title>{prod.name}</Card.Title>
