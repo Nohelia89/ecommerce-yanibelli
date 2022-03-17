@@ -30,7 +30,7 @@ function UtilsProductDetails({idCard}) {
     useEffect(() => {
         gfetch //simulacion de llamado a una api
 
-            .then((resp) => setDesc(resp))
+            .then((resp) => setDesc(resp.find (prod=> prod.id === {idCard})))
             .catch((err) => console.log(err)) // capturamos todos los errores con el catch
             .finally(() => setLoading(false))//ej loading
 
