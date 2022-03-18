@@ -1,5 +1,4 @@
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap"
-import UtilsProductDetails from "../../Utils/UtilsProductDetails";
 
 import StockCount from "../StockCount/StockCount";
 
@@ -27,7 +26,7 @@ function Item({ prod }) {
           <StockCount stock={prod.stock} initial={1} />
         </Card.Body>
         <Card.Body>
-        <Button variant="primary" onClick={<UtilsProductDetails id={prod.id}/>}>Details</Button>
+        <Button variant="primary" >Details</Button>
         </Card.Body>
       </Card>
 

@@ -1,15 +1,29 @@
-/*import { CardGroup } from "react-bootstrap"
-import ItemList from "../ItemList/ItemList"
 
-function ItemDetail({ id }) {
-    // console.log({prods})
+import {  Card } from "react-bootstrap"
+
+function ItemDetail({ prod }) {
+    
+     const { id, name, price, url  } = prod
+     console.log(id, name, price)
+
+
+
     return (
   
       <>
   
-        <CardGroup><ItemList products={products} /></CardGroup>
+  <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={url}/>
+  <Card.Body>
+    <Card.Title>ItShop!</Card.Title>
+    <Card.Subtitle className="mb-2 text-muted">Details</Card.Subtitle>
+    <Card.Text>
+     Producto: {name} Precio : US$ {price}
+    </Card.Text>
   
-        
+  </Card.Body>
+</Card>
+  
       </>
     )
   
@@ -17,4 +31,4 @@ function ItemDetail({ id }) {
   
   }
   export default ItemDetail
-*/
+
