@@ -1,6 +1,7 @@
 
 
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import ItemDetail from "../components/ItemDetail/ItemDetail"
 import {gFetch} from "../Utils/gFetch.js"
 
@@ -9,15 +10,15 @@ import {gFetch} from "../Utils/gFetch.js"
 function ItemDetailContainer() {
 
     //const [bool, setBool] = useState(true)
-    const [descs, setProd] = useState({})
+    const [prod, setProd] = useState({})
     const [loading, setLoading] = useState(true)
     
-
+    const {detailId} = useParams()
 
     useEffect(() => {
         gFetch //simulacion de llamado a una api
 
-            .then(resp => setProd(resp.find (prod => prod.id === 1)))
+            .then(resp => setProd(resp.find (prod => prod.id === detailId)))
             .catch((err) => console.log(err)) // capturamos todos los errores con el catch
             .finally(() => setLoading(false))//ej loading
            
@@ -26,7 +27,7 @@ function ItemDetailContainer() {
 
     return (
         <>
-  {loading ? <h2>Loading...</h2> : <ItemDetail prod={descs} />} 
+  {loading ? <h2>Loading...</h2> : <ItemDetail prod={prod} />} 
    
         </>
     )

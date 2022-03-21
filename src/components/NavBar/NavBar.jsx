@@ -1,5 +1,6 @@
 
 import {Container, Navbar, Nav} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import Widget from '../Widget/Widget';
 function NavBar() {
     return ( 
@@ -17,9 +18,9 @@ function NavBar() {
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <NavLink to='cart' className={({isActive})=>isActive ? 'active':''}>
             <Widget/>
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         </Container>
