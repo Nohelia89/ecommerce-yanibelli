@@ -3,7 +3,7 @@ import {  Card } from "react-bootstrap"
 
 function ItemDetail({ prod }) {
     
-     const { id, name, price, url  } = prod
+     const { id, name, category,price, url, } = prod
      console.log(id, name, price)
 
 

@@ -18,7 +18,7 @@ function ItemDetailContainer() {
     useEffect(() => {
         gFetch //simulacion de llamado a una api
 
-            .then(resp => setProd(resp.find (prod => prod.id === detailId)))
+            .then(resp => setProd(resp.find (prod => prod.id === parseInt(detailId))))
             .catch((err) => console.log(err)) // capturamos todos los errores con el catch
             .finally(() => setLoading(false))//ej loading
            

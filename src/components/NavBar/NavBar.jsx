@@ -1,20 +1,31 @@
 
 import {Container, Navbar, Nav} from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Widget from '../Widget/Widget';
 function NavBar() {
     return ( 
       
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="#home">ItShop!</Navbar.Brand>
+          <Link to='/'>
+        <Navbar.Brand >ItShop!</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">SDD</Nav.Link>
-            <Nav.Link href="#pricing">Tarjetas de video</Nav.Link>
-            <Nav.Link href="#pricing">Monitor</Nav.Link>
-            <Nav.Link href="#pricing">Consolas</Nav.Link>
+          <Link to='/category/mother'>
+            <Nav.Link >Mother</Nav.Link>
+            </Link>
+            <Link to='category/graphics'>
+            <Nav.Link >Graphics</Nav.Link>
+             </Link>
+             <Link to='category/monitor'>
+            <Nav.Link >Monitor</Nav.Link>
+            </Link>
+            <Link to='category/accesories'>
+            <Nav.Link>Accesories</Nav.Link>
+
+            </Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>

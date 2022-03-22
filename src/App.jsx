@@ -8,6 +8,7 @@ import ItemDetailContainer from './container/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 
 
+//const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
 function App() {
 
 
@@ -18,7 +19,8 @@ function App() {
     <Routes>
       <Route path="/" element={<ItemListContainer />}/>
       <Route path="/cart" element={<Cart /> }/>
-    <Route path="/detalle/:detailId" element={<ItemDetailContainer /> }/>
+    <Route path="/detail/:detailId" element={<ItemDetailContainer /> }/>
+    <Route path="/category/:category" element={<ItemListContainer /> }/>
     <Route path="/*" element={<Navigate to='/'/>}/>
 
       </Routes>
