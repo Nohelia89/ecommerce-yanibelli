@@ -13,33 +13,16 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-       
-            <Nav.Link >
-               <Link to='category/mother'>
-               Mother
-            </Link>
-            </Nav.Link>
-            <Nav.Link >
-               <Link to='category/graphics'>
-               Graphics
-            </Link>
-            </Nav.Link>
-            <Nav.Link >
-               <Link to='category/monitor'>
-               Monitor
-            </Link>
-            </Nav.Link>
-            <Nav.Link >
-               <Link to='category/accesories'>
-               Accesories
-            </Link>
-            </Nav.Link>
+          <Nav.Link as={Link} to="category/mother">Mother</Nav.Link>
+          <Nav.Link as={Link} to="category/graphics">Graphics</Nav.Link>
+          <Nav.Link as={Link} to="category/graphics">Monitor</Nav.Link>
+          <Nav.Link as={Link} to="category/accesories">Accesories</Nav.Link>
+           
 
 
-        
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>
+            <Nav.Link >Iniciar Sesion</Nav.Link>
             <NavLink to='cart' className={({isActive})=>isActive ? 'active':''}>
             <Widget/>
             </NavLink>

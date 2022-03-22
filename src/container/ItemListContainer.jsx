@@ -39,7 +39,6 @@ else
 
   }, [category])
 
-  console.log(prods)
   return (
 
     <>
