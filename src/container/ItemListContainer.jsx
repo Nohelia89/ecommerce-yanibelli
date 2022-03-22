@@ -1,7 +1,9 @@
-import { useEffect, useState, useParams } from "react"
+import { useEffect, useState } from "react"
 import { CardGroup } from "react-bootstrap"
 import ItemList from "../components/ItemList/ItemList"
 import {gFetch} from "../Utils/gFetch.js"
+import {useParams} from "react-router-dom"
+
 
 
 
@@ -35,7 +37,7 @@ else
 
 
 
-  }, [])
+  }, [category])
 
   console.log(prods)
   return (

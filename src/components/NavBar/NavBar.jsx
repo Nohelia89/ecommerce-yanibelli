@@ -13,19 +13,30 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <Link to='/category/mother'>
-            <Nav.Link >Mother</Nav.Link>
+       
+            <Nav.Link >
+               <Link to='category/mother'>
+               Mother
             </Link>
-            <Link to='category/graphics'>
-            <Nav.Link >Graphics</Nav.Link>
-             </Link>
-             <Link to='category/monitor'>
-            <Nav.Link >Monitor</Nav.Link>
+            </Nav.Link>
+            <Nav.Link >
+               <Link to='category/graphics'>
+               Graphics
             </Link>
-            <Link to='category/accesories'>
-            <Nav.Link>Accesories</Nav.Link>
+            </Nav.Link>
+            <Nav.Link >
+               <Link to='category/monitor'>
+               Monitor
+            </Link>
+            </Nav.Link>
+            <Nav.Link >
+               <Link to='category/accesories'>
+               Accesories
+            </Link>
+            </Nav.Link>
 
-            </Link>
+
+        
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Iniciar Sesion</Nav.Link>
