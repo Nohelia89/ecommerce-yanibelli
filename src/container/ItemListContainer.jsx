@@ -21,7 +21,7 @@ function ItemListContainer() {
     {
       gFetch //simulacion de llamado a una api
 
-    .then(resp => setProds(resp.filter(prod=>prod.categoria ===category)))
+    .then(resp => setProds(resp.filter(prod=>prod.category ===category)))
     .catch(err => console.log(err)) // capturamos todos los errores con el catch
     .finally(() => setLoading(false))//ej loading
     }
