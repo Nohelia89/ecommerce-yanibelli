@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 //import {lazy, Suspense} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,19 +14,19 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App" >
-      <NavBar />
-    <Routes>
-      <Route path="/" element={<ItemListContainer />}/>
-      <Route path="/cart" element={<Cart /> }/>
-    <Route path="/detail/:detailId" element={<ItemDetailContainer /> }/>
-    <Route path="/category/:category" element={<ItemListContainer/> }/>
-    <Route path="/*" element={<Navigate to='/'/>}/>
+      <div className="App" >
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
+          <Route path="/category/:category" element={<ItemListContainer />} />
+          <Route path="/*" element={<Navigate to='/' />} />
 
-      </Routes>
-    </div >
+        </Routes>
+      </div >
     </BrowserRouter>
   )
-  
+
 }
 export default App;

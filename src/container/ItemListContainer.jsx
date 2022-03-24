@@ -18,13 +18,13 @@ function ItemListContainer() {
 
   useEffect(() => {
 
-    
-      gFetch //simulacion de llamado a una api
 
-        .then(resp => category ? setProds(resp.filter(prod => prod.category === category)) : setProds(resp))
-        .catch(err => console.log(err)) // capturamos todos los errores con el catch
-        .finally(() => setLoading(false))//ej loading
-    
+    gFetch //simulacion de llamado a una api
+
+      .then(resp => category ? setProds(resp.filter(prod => prod.category === category)) : setProds(resp))
+      .catch(err => console.log(err)) // capturamos todos los errores con el catch
+      .finally(() => setLoading(false))//ej loading
+
 
 
 

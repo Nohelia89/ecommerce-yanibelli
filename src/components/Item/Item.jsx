@@ -10,7 +10,7 @@ function Item({ prod }) {
   return (
 
     <div>
-    
+
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={prod.url} />
         <Card.Body>
@@ -27,16 +27,16 @@ function Item({ prod }) {
           <StockCount stock={prod.stock} initial={1} />
         </Card.Body>
         <Link to={`detail/${prod.id}`}>
-        <Card.Body>
-      
-        <Button variant="primary" >Details</Button>
-      
-        </Card.Body>
+          <Card.Body>
+
+            <Button variant="primary" >Details</Button>
+
+          </Card.Body>
         </Link>
       </Card>
 
     </div>
-   
+
   )
 
 }
