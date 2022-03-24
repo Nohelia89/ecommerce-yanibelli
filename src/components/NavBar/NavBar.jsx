@@ -15,7 +15,7 @@ function NavBar() {
           <Nav className="me-auto">
           <Nav.Link as={Link} to="category/mother">Mother</Nav.Link>
           <Nav.Link as={Link} to="category/graphics">Graphics</Nav.Link>
-          <Nav.Link as={Link} to="category/graphics">Monitor</Nav.Link>
+          <Nav.Link as={Link} to="category/monitor">Monitor</Nav.Link>
           <Nav.Link as={Link} to="category/accesories">Accesories</Nav.Link>
            
 
