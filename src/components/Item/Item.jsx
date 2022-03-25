@@ -23,9 +23,7 @@ function Item({ prod }) {
           <ListGroupItem> US$ {prod.price}</ListGroupItem>
 
         </ListGroup>
-        <Card.Body>
-          <StockCount stock={prod.stock} initial={1} />
-        </Card.Body>
+       
         <Link to={`detail/${prod.id}`}>
           <Card.Body>
 

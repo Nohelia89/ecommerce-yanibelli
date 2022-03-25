@@ -1,10 +1,13 @@
 
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
+
+import { Link } from "react-router-dom"
+import StockCount from "../StockCount/StockCount"
 
 function ItemDetail({ prod }) {
 
-  const { id, name, price, url, } = prod
-  console.log(id, name, price)
+  const { id, name, price, url, stock } = prod
+  console.log(id, name, price, stock)
 
 
 
@@ -20,7 +23,14 @@ function ItemDetail({ prod }) {
           <Card.Text>
             Producto: {name} Precio : US$ {price}
           </Card.Text>
+          <StockCount stock={prod.stock} initial={1} />
+          <div>
 
+
+
+
+
+          </div>
         </Card.Body>
       </Card>
 
