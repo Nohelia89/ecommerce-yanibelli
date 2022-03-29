@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Item({ prod }) {
 
 
-  console.log ("llegue a item"+prod.id)
+ 
   return (
 
     <div>

@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-function StockCount({ stock, initial }) {
+import { useCartContext } from '../../Context/CartContext';
+
+
+
+
+function ItemCount({ stock, initial, prod }) {
 
   const [count, setCount] = useState(initial)
   const [inputType, setInputType] = useState('addtocart')
+
+  const { addToCart, cartList, removeToCart } = useCartContext()
+
+
+
 
   const handleSum = () => {
     if (count < stock) {
@@ -24,13 +34,25 @@ function StockCount({ stock, initial }) {
 
   const onAdd = () => {
     if (!stock < 1) {
+      addToCart({ ...prod, cantidad: count })
+
       console.log(count)
+      console.log(cartList)
       buttonCount()
+      console.log(cartList)
     }
     else {
-      console.log("Sin stock")
+      alert("Sin stock")
     }
   }
+
+  const onRemove = () => {
+
+    removeToCart({ ...prod })
+
+  }
+
+
   return (
     <>
 
@@ -47,7 +69,9 @@ function StockCount({ stock, initial }) {
             <Button variant="dark" onClick={handleRest}>-</Button>
             <div>
               <Button variant="dark" onClick={onAdd}>Add to Cart</Button>
+
             </div>
+
           </>
 
           :
@@ -72,4 +96,4 @@ function StockCount({ stock, initial }) {
   )
 }
 
-export default StockCount
+export default ItemCount

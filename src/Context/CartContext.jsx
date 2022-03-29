@@ -1,23 +1,57 @@
 
 
-import { createContext } from "react"
+import { createContext, useContext, useState } from "react"
+
+
+const CartContext = createContext([]);
+export const useCartContext = () => useContext(CartContext)
 
 
 
-function Context() {
 
-    const ContextApp = createContext("hola");
-    const prods = [prods, setProds] = useState(products)
+function CartContextProvider({ children }) {
 
 
+    const [cartList, setCartList] = useState([])
+
+
+
+    const addToCart = (item) => {
+
+        const found = cartList.find(prod => prod.id === item.id);
+        if (found) {
+            found.cantidad += item.cantidad
+        }
+        else {
+            setCartList([...cartList, item])
+        }
+
+    }
+
+
+    const clear = () => {
+        setCartList([])
+    }
+
+    const removeItem = (item) => {
+        const items = cartList.filter(prod => prod.id === item.id)
+
+        setCartList({ items })
+    }
     return (
         <>
-            <ContextApp.Provider value={{
-                prods
+            <CartContext.Provider value={{
+                cartList,
+                addToCart,
+                clear,
+                removeItem
+
             }}>
-                <ItemListContainer prods={prods} />
-            </ContextApp.Provider>
+                {children}
+
+            </CartContext.Provider>
         </>
     )
 }
-export default Context;
+
+export default CartContextProvider

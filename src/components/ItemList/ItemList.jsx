@@ -1,11 +1,10 @@
 
-import { useContext } from "react";
-//import Context from "../../Context/CartContext";
 import Item from "../Item/Item";
 
 
 function ItemList({ products }) {
-//const obj = useContext(Context)
+//const obj = useContext(ContextApp)
+//console.log(obj+"aca esta")
 
     return (
         <>

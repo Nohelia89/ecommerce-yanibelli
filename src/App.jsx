@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-
+import CartContextProvider from './Context/CartContext';
 
 //const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
 function App() {
@@ -14,17 +14,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App" >
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
-          <Route path="/category/:category" element={<ItemListContainer />} />
-          <Route path="/*" element={<Navigate to='/' />} />
-          <Route path="/category/:category/Detail/:detailId" element={<ItemDetailContainer />} />
-        </Routes>
-      </div >
+      <CartContextProvider>
+        <div className="App" >
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
+            <Route path="/category/:category" element={<ItemListContainer />} />
+            <Route path="/*" element={<Navigate to='/' />} />
+            <Route path="/category/:category/Detail/:detailId" element={<ItemDetailContainer />} />
+          </Routes>
+        </div >
+      </CartContextProvider>
     </BrowserRouter>
   )
 
