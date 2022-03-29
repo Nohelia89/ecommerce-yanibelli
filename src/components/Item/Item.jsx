@@ -1,16 +1,16 @@
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap"
 import { Link } from "react-router-dom";
 
-import StockCount from "../StockCount/StockCount";
+
 
 function Item({ prod }) {
 
 
-
+  console.log ("llegue a item"+prod.id)
   return (
 
     <div>
-
+     
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={prod.url} />
         <Card.Body>

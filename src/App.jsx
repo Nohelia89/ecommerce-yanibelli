@@ -22,7 +22,7 @@ function App() {
           <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
           <Route path="/category/:category" element={<ItemListContainer />} />
           <Route path="/*" element={<Navigate to='/' />} />
-
+          <Route path="/category/:category/Detail/:detailId" element={<ItemDetailContainer />} />
         </Routes>
       </div >
     </BrowserRouter>

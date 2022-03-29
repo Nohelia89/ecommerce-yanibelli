@@ -1,9 +1,11 @@
 
+import { useContext } from "react";
+//import Context from "../../Context/CartContext";
 import Item from "../Item/Item";
 
 
 function ItemList({ products }) {
-
+//const obj = useContext(Context)
 
     return (
         <>

@@ -1,7 +1,7 @@
 
-import { Button, Card } from "react-bootstrap"
+import {  Card } from "react-bootstrap"
 
-import { Link } from "react-router-dom"
+//import { Link } from "react-router-dom"
 import StockCount from "../StockCount/StockCount"
 
 function ItemDetail({ prod }) {
