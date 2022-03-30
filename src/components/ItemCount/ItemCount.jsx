@@ -11,7 +11,7 @@ function ItemCount({ stock, initial, prod }) {
   const [count, setCount] = useState(initial)
   const [inputType, setInputType] = useState('addtocart')
 
-  const { addToCart, cartList, removeToCart } = useCartContext()
+  const { addToCart, cartList } = useCartContext()
 
 
 
@@ -46,11 +46,7 @@ function ItemCount({ stock, initial, prod }) {
     }
   }
 
-  const onRemove = () => {
-
-    removeToCart({ ...prod })
-
-  }
+ 
 
 
   return (
