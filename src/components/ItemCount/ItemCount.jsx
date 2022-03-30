@@ -46,7 +46,7 @@ function ItemCount({ stock, initial, prod }) {
     }
   }
 
- 
+
 
 
   return (
