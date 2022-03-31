@@ -12,7 +12,7 @@ import { getFirestoreApp } from './firebase/config';
 //const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
 function App() {
 
-getFirestoreApp()
+  getFirestoreApp()
 
   return (
     <BrowserRouter>

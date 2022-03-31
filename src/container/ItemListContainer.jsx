@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { CardGroup } from "react-bootstrap"
 import ItemList from "../components/ItemList/ItemList"
-import { gFetch } from "../Utils/gFetch.js"
+//import { gFetch } from "../Utils/gFetch.js"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 
@@ -15,8 +15,7 @@ function ItemListContainer() {
   const [prods, setProds] = useState([])
   const [loading, setLoading] = useState(true)
   const { category } = useParams()
-  const [prod, setProd] = useState([])
-
+  
   // useEffect(() => {
 
 
@@ -38,27 +37,26 @@ function ItemListContainer() {
     const db = getFirestore()
     const queryCollection = collection(db, 'items')
     getDocs(queryCollection)
-      .then(resp => setProds({ docs: resp.id, ...resp.data() }))
-  //  setProds(prod.filter(prod => prod.category === category)) : setProds(resp.map({ docs: resp.id, ...resp.data() }))
-    {category ?  setProds(prod.filter(prod => prod.category === category)) : setProds(resp.map({ docs: resp.id, ...resp.data() }))}
-  
+      .then(resp => setProds(resp.map({ docs: resp.id, ...resp.data() })))
 
-
-    //         .then(resp => setProd(resp.find(prod => prod.id === detailId)))
-    //         .catch((err) => console.log(err)) // capturamos todos los errores con el catch
-    //         .finally(() => setLoading(false))//ej loading
-
-}, [category])
-return (
-
-  <>
+   // { category && setProds(prod.filter(prod => prod.category === category) } ESTA CONDICIONAL NO ME SALE,
+   //PRIMERO GUARDE TODO CON SETPRODS LO QUE ME TRAJE, Y AHORA LO QUIERO GUARDAR EN CASO DE 
+   //QUE EXISTA CATEGORIA CON EL FILTER, PERO IMPOSIBLE
 
 
 
-    {loading ? <h2>Loading...</h2> : <CardGroup><ItemList products={prods} /></CardGroup>}
 
-  </>
-)
+  }, [category])
+  return (
+
+    <>
+
+
+
+      {loading ? <h2>Loading...</h2> : <CardGroup><ItemList products={prods} /></CardGroup>}
+
+    </>
+  )
 
 
 
