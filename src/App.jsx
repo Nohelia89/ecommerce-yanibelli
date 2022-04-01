@@ -7,12 +7,12 @@ import ItemListContainer from './container/ItemListContainer';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './Context/CartContext';
-import { getFirestoreApp } from './firebase/config';
+//import { getFirestoreApp } from './firebase/config';
 
 //const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
 function App() {
 
-  getFirestoreApp()
+ // getFirestoreApp()
 
   return (
     <BrowserRouter>

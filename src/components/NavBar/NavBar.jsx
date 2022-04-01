@@ -1,8 +1,13 @@
 
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import { useCartContext } from '../../Context/CartContext';
 import Widget from '../Widget/Widget';
+
+
 function NavBar() {
+
+  const { totalItems } = useCartContext()
   return (
 
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -24,7 +29,7 @@ function NavBar() {
           <Nav>
             <Nav.Link >Iniciar Sesion</Nav.Link>
             <NavLink to='cart' className={({ isActive }) => isActive ? 'active' : ''}>
-              <Widget />
+              <Widget />{totalItems()}
             </NavLink>
           </Nav>
         </Navbar.Collapse>
