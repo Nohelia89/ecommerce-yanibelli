@@ -36,10 +36,9 @@ function ItemCount({ stock, initial, prod }) {
     if (!stock < 1) {
       addToCart({ ...prod, cantidad: count })
 
-      console.log(count)
-      console.log(cartList)
+     
       buttonCount()
-      console.log(cartList)
+
     }
     else {
       alert("Sin stock")

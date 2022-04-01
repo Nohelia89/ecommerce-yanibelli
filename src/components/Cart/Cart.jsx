@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Cart() {
 
   const { cartList, clear, removeItem, totalPrice } = useCartContext()
-console.log(totalPrice)
+
   return (
     <div>
       
