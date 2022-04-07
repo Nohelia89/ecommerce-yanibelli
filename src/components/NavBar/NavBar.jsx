@@ -28,8 +28,9 @@ function NavBar() {
           </Nav>
           <Nav>
             <Nav.Link >Iniciar Sesion</Nav.Link>
-            <NavLink to='cart' className={({ isActive }) => isActive ? 'active' : ''}>
-              <Widget />{totalItems()}
+            <NavLink to='/cart' className={({ isActive }) => isActive ? 'active' : ''}>
+
+              <Widget /> {totalItems()}
             </NavLink>
           </Nav>
         </Navbar.Collapse>
