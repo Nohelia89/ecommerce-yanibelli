@@ -21,7 +21,7 @@ function CartContextProvider({ children }) {
 
         const found = cartList.find(prod => prod.id === item.id);
         if (found) {
-            found.cantidad += item.cantidad
+            found.quantity += item.quantity
         }
         else {
             setCartList([...cartList, item])
@@ -49,14 +49,14 @@ function CartContextProvider({ children }) {
     }
 
 
-    const totalItems =()=>{
-        return cartList.reduce(( prevValue, prod)=> prevValue += prod.cantidad, 0)
-      }
+    const totalItems = () => {
+        return cartList.reduce((prevValue, prod) => prevValue += prod.quantity, 0)
+    }
 
-      const totalPrice =()=>{
-        return cartList.reduce(( prevValue, prod)=> prevValue += (prod.cantidad * prod.price), 0)
-    
-      }
+    const totalPrice = () => {
+        return cartList.reduce((prevValue, prod) => prevValue += (prod.quantity * prod.price), 0)
+
+    }
     return (
         <>
             <CartContext.Provider value={{

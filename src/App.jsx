@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-//import {lazy, Suspense} from 'react';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
@@ -10,7 +10,7 @@ import CartContextProvider from './Context/CartContext';
 import { getFirestoreApp } from './firebase/config';
 import User from './components/User/User';
 
-//const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
+
 function App() {
 
   getFirestoreApp()

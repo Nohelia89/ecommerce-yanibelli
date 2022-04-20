@@ -13,36 +13,28 @@ function Cart() {
 
 
   const generateOrder = async (e) => {
-    //  e.preventDefault();
+ 
 
     let order = {}
-    order.buyer= {name: {userName}, lastName: {userLastName}, email: {userEmail}}
-    //order.buyer = { name: 'Nohe', email: 'ny@gmail.com', phone: '1626265' }
+    order.buyer = { name: { userName }, lastName: { userLastName }, email: { userEmail } }
+  
     order.items = cartList.map(cartItem => {
       const id = cartItem.id
       const name = cartItem.name
-      const price = cartItem.price * cartItem.cantidad
+      const price = cartItem.price * cartItem.quantity
       return { id, name, price }
     })
     order.total = totalPrice()
     console.log(order)
 
 
-    //crear 
     const db = getFirestore()
     const queryCollectionItems = collection(db, 'orders')
     await addDoc(queryCollectionItems, order)
       .then(({ id }) => alert('El código de su orden es el número ' + id))
       .catch(err => console.log(err))
 
-    //actualizar stock manual
-    /* const db = getFirestore()
-    const queryUpdate = doc(db, 'items', "aptx4VieP6Mli3248my3")
-    updateDoc(queryUpdate, {stock: 99})
-    .then( resp => console.log(resp ))
-    .catch(err => console.log(err)) */
 
-    //OPCIONAL STOCK
     const queryCollection = collection(db, 'items')
     const queryStockUpdate = await query(
       queryCollection, //[]
@@ -51,7 +43,7 @@ function Cart() {
     const batch = writeBatch(db)
     await getDocs(queryStockUpdate)
       .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-        stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
+        stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
       })))
     batch.commit()
   }
@@ -61,9 +53,9 @@ function Cart() {
     <User />
     generateOrder()
       .then(resp => clear())
-      .catch((err) => console.log(err)) // capturamos todos los errores con el catch
+      .catch((err) => console.log(err)) 
 
-clear()
+    clear()
   }
 
   return (
@@ -71,7 +63,7 @@ clear()
 
       <ListGroup> {cartList.map(prod =>
         <ListGroup.Item
-          key={prod.id}> Quantity: {prod.cantidad} / Name: {prod.name} / Precio: u$s {prod.price}
+          key={prod.id}> Quantity: {prod.quantity} / Name: {prod.name} / Precio: u$s {prod.price}
           <Button variant="dark" onClick={() => removeItem(prod.id)}>X</Button>
 
         </ListGroup.Item>)}</ListGroup>

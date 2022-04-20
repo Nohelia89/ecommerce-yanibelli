@@ -9,8 +9,6 @@ function ItemDetail({ prod }) {
   const { name, price, url } = prod
 
 
-
-
   return (
 
     <>

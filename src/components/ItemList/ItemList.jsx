@@ -3,8 +3,7 @@ import Item from "../Item/Item";
 
 
 function ItemList({ products }) {
-//const obj = useContext(ContextApp)
-//console.log(obj+"aca esta")
+
 
     return (
         <>
