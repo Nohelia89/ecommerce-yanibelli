@@ -37,17 +37,15 @@ function ItemListContainer() {
   useEffect(() => {
     const db = getFirestore()
     const queryCollection = collection(db, 'items')
-    const queryFilter = category? query(queryCollection, where('category',"==", category)): queryCollection 
-    
+    const queryFilter = category ? query(queryCollection, where('category', "==", category)) : queryCollection
+
     getDocs(queryFilter)
- //   .then(resp => category ? setProds(resp.filter.map(prod => prod.category === category)) : setProds(resp.docs.map({ id: resp.id, ...resp.data })))
- 
-     .then(resp => setProds(resp.docs.map(prod=>({ id: prod.id, ...prod.data() }))))
+
+      .then(resp => setProds(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
       .catch(err => console.log(err)) // capturamos todos los errores con el catch
       .finally(() => setLoading(false))//ej loading
 
- //   { category ? setProds(resp.map.filter(prod => prod.category === category)): setProds(resp.docs.map({ id: resp.id, ...resp.data() })))} 
-   
+
 
 
 

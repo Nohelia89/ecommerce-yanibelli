@@ -36,7 +36,7 @@ function ItemCount({ stock, initial, prod }) {
     if (!stock < 1) {
       addToCart({ ...prod, cantidad: count })
 
-     
+
       buttonCount()
 
     }

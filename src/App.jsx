@@ -8,6 +8,7 @@ import ItemDetailContainer from './container/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './Context/CartContext';
 import { getFirestoreApp } from './firebase/config';
+import User from './components/User/User';
 
 //const ItemListContainer = lazy(()=>import ('./container/ItemListContainer'))
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/category/:category" element={<ItemListContainer />} />
             <Route path="/*" element={<Navigate to='/' />} />
             <Route path="/category/:category/Detail/:detailId" element={<ItemDetailContainer />} />
+            <Route path="/user" element={<User />} />
           </Routes>
         </div >
       </CartContextProvider>
