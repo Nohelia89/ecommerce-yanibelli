@@ -17,7 +17,7 @@ e.preventDefault()
 
     let order = {}
    
-
+    order.buyer = dataForm
     order.items = cartList.map(cartItem => {
       const id = cartItem.id
       const name = cartItem.name
@@ -25,7 +25,7 @@ e.preventDefault()
       return { id, name, price }
     })
     order.total = totalPrice()
-    console.log(order)
+  
 
 
     const db = getFirestore()
@@ -48,6 +48,7 @@ e.preventDefault()
       })))
     batch.commit()
   }
+  
 
   const handleChange = (e) => {
     setDataForm({
@@ -90,8 +91,10 @@ e.preventDefault()
         value={dataForm.email2}
         onChange={handleChange}
       /><br />
-
+      
+     
       <button className="btn btn-outline-primary" onClick={generateOrder()} >Finalizar Compra</button>
+
     </form>
   )
 

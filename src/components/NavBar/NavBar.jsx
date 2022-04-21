@@ -7,7 +7,7 @@ import Widget from '../Widget/Widget';
 
 function NavBar() {
 
-  const { totalItems } = useCartContext()
+  const { totalItems, cartList } = useCartContext()
   return (
 
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -30,7 +30,7 @@ function NavBar() {
            
             <NavLink to='/cart' className={({ isActive }) => isActive ? 'active' : ''}>
 
-              <Widget /> {totalItems()}
+              <Widget /> {cartList.length>0 ? totalItems():" "}
             </NavLink>
           </Nav>
         </Navbar.Collapse>
