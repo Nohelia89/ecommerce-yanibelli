@@ -40,7 +40,7 @@ function ItemListContainer() {
 
 
 
-      {loading ? <h2>Loading...</h2> : <CardGroup><ItemList products={prods} /></CardGroup>}
+      {loading ? <h2>Cargando...</h2> : <CardGroup><ItemList products={prods} /></CardGroup>}
 
     </>
   )
