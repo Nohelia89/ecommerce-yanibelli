@@ -27,7 +27,7 @@ function Item({ prod }) {
         <Link to={`detail/${prod.id}`}>
           <Card.Body>
 
-            <Button variant="primary" >Details</Button>
+            <Button variant="dark" >Details</Button>
 
           </Card.Body>
         </Link>

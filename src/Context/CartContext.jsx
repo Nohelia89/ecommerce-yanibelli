@@ -12,9 +12,6 @@ function CartContextProvider({ children }) {
 
 
     const [cartList, setCartList] = useState([])
-    const [userName, setUserName] = useState()
-    const [userLastName, setUserLastName] = useState()
-    const [userEmail, setUserEmail] = useState()
 
 
     const addToCart = (item) => {
@@ -34,13 +31,7 @@ function CartContextProvider({ children }) {
         setCartList([])
     }
 
-    const loadUser = (userName, userLastName, userEmail) => {
-        setUserName(userName)
-        setUserLastName(userLastName)
-        setUserEmail(userEmail)
 
-
-    }
 
     const removeItem = (id) => {
         setCartList(cartList.filter(prod => prod.id !== id))
@@ -61,15 +52,13 @@ function CartContextProvider({ children }) {
         <>
             <CartContext.Provider value={{
                 cartList,
-                userName,
-                userLastName,
-                userEmail,
+
                 addToCart,
                 clear,
                 removeItem,
                 totalItems,
                 totalPrice,
-                loadUser
+
 
             }}>
                 {children}

@@ -11,7 +11,7 @@ function ItemCount({ stock, initial, prod }) {
   const [count, setCount] = useState(initial)
   const [inputType, setInputType] = useState('addtocart')
 
-  const { addToCart} = useCartContext()
+  const { addToCart } = useCartContext()
 
 
 
@@ -57,8 +57,8 @@ function ItemCount({ stock, initial, prod }) {
         inputType === 'addtocart' ?
 
           <>
-            
-           
+
+
 
             <Button variant="light" onClick={handleRest}>-</Button>
             <label>{count}</label>
