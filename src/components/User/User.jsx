@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 function User() {
 
 
-
+ 
   const [dataForm, setDataForm] = useState({ name: '', phone: '', email: '', email2: '' })
 
 
