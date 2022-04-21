@@ -57,10 +57,12 @@ function ItemCount({ stock, initial, prod }) {
         inputType === 'addtocart' ?
 
           <>
-            <Button variant="dark" onClick={handleSum}>+</Button>
-            <h4>{count}</h4>
+            
+           
 
-            <Button variant="dark" onClick={handleRest}>-</Button>
+            <Button variant="light" onClick={handleRest}>-</Button>
+            <label>{count}</label>
+            <Button variant="light" onClick={handleSum}>+</Button>
             <div>
               <Button variant="dark" onClick={onAdd}>Add to Cart</Button>
 
