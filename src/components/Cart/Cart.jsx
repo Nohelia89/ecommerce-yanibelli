@@ -17,7 +17,7 @@ function Cart() {
 
       <ListGroup> {cartList.map(prod =>
         <ListGroup.Item
-          key={prod.id}> Quantity: {prod.quantity} / Name: {prod.name} / Precio: u$s {prod.price}
+          key={prod.id}> Cantidad: {prod.quantity} / Nombre: {prod.name} / Precio: u$s {prod.price}
 
          
           <Button variant="dark" onClick={() => removeItem(prod.id)}>X</Button>

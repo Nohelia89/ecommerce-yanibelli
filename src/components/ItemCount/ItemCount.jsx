@@ -64,7 +64,7 @@ function ItemCount({ stock, initial, prod }) {
             <label>{count}</label>
             <Button variant="light" onClick={handleSum}>+</Button>
             <div>
-              <Button variant="dark" onClick={onAdd}>Add to Cart</Button>
+              <Button variant="dark" onClick={onAdd}>Agregar al carrito</Button>
 
             </div>
 

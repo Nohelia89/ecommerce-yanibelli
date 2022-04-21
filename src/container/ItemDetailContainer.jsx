@@ -46,7 +46,7 @@ function ItemDetailContainer() {
 
     return (
         <>
-             { loading ? <h4>Loading...</h4> : (prod.id === undefined ? <Back /> : <ItemDetail prod = {prod} /> )}
+             { loading ? <h4>Cargando...</h4> : (prod.id === undefined ? <Back /> : <ItemDetail prod = {prod} /> )}
 
         </>
     )

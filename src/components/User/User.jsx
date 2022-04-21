@@ -74,7 +74,7 @@ function User() {
 
     <form
       className='mt-5'
-      onSubmit={generateOrder}
+      onSubmit={(e)=>generateOrder(e)}
     >
       <input
         required
@@ -110,7 +110,7 @@ function User() {
       /><br />
 
 
-      <button className="btn btn-outline-primary" onClick={(e)=>generateOrder(e)} >Finalizar Compra</button>
+      <button className="btn btn-outline-primary" onClick={generateOrder} >Finalizar Compra</button>
 
     </form>
   )

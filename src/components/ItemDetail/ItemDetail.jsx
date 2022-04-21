@@ -17,7 +17,7 @@ function ItemDetail({ prod }) {
         <Card.Img variant="top" src={url} />
         <Card.Body>
           <Card.Title>ItShop!</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Details</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">Detalles</Card.Subtitle>
           <Card.Text>
             Producto: {name} Precio : US$ {price}
           </Card.Text>
