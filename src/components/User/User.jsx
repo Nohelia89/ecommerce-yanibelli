@@ -35,6 +35,8 @@ function User() {
       await addDoc(queryCollectionItems, order)
         .then(({ id }) => alert('El código de su orden es el número ' + id
           + "           ¡Gracias por su compra!"))
+        //.then(<Navigate to='/')
+      
         .catch(err => console.log(err))
         .finally(clear)
 
@@ -69,7 +71,7 @@ function User() {
 
     <form
       className='mt-5'
-      onSubmit={generateOrder}
+      onSubmit={generateOrder()}
     >
       <input
         required

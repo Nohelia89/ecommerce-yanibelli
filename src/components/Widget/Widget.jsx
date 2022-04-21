@@ -1,12 +1,12 @@
 import React from 'react'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { FiShoppingCart } from 'react-icons/fi'
 
 
 function Widget() {
   return (
    
 
-    <AiOutlineShoppingCart />
+    <FiShoppingCart />
   
     
   )
