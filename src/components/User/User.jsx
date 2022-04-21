@@ -2,10 +2,14 @@
 import { useCartContext } from '../../Context/CartContext'
 import { addDoc, collection, getFirestore, query, where, documentId, writeBatch, getDocs } from 'firebase/firestore';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
+
 function User() {
 
 
- 
+  const navigate = useNavigate()
   const [dataForm, setDataForm] = useState({ name: '', phone: '', email: '', email2: '' })
 
 
@@ -18,7 +22,7 @@ function User() {
     if (dataForm.email === dataForm.email2) {
       let date = new Date().toDateString();
       let order = {}
-     order.date = date
+      order.date = date
       order.buyer = dataForm
       order.items = cartList.map(cartItem => {
         const id = cartItem.id
@@ -35,6 +39,7 @@ function User() {
       await addDoc(queryCollectionItems, order)
         .then(({ id }) => alert('El código de su orden es el número ' + id
           + "           ¡Gracias por su compra!"))
+        .then(() => navigate('/'))
         .catch(err => console.log(err))
         .finally(clear)
 
@@ -105,7 +110,7 @@ function User() {
       /><br />
 
 
-      <button className="btn btn-outline-primary" onClick={generateOrder()} >Finalizar Compra</button>
+      <button className="btn btn-outline-primary" onClick={(e)=>generateOrder(e)} >Finalizar Compra</button>
 
     </form>
   )

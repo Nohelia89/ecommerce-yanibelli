@@ -33,10 +33,11 @@ function Cart() {
             <div>
               El total de su compra es de : u$s{totalPrice()}
             </div>
-            <div>
-            <Button variant="dark" onClick={clear}>Vaciar Carrito</Button>
+            <div style={{margin:200}} >
+            <Button style={{margin:15}} variant="dark" onClick={clear}>Vaciar Carrito</Button>
+            
             <Link to='/User'>
-              <Button variant="dark"  >Confirmar Compra</Button>
+              <Button style={{margin:15}} variant="dark"  >Confirmar Compra</Button>
             </Link>
             </div>
           </div>
