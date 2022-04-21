@@ -30,7 +30,7 @@ function CartContextProvider({ children }) {
 
     const clear = () => {
         setCartList([])
-        
+
     }
 
 

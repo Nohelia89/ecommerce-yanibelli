@@ -27,10 +27,10 @@ function NavBar() {
 
           </Nav>
           <Nav>
-           
+
             <NavLink to='/cart' className={({ isActive }) => isActive ? 'active' : ''}>
 
-              <Widget /> {cartList.length>0 ? totalItems():" "}
+              <Widget /> {cartList.length > 0 ? totalItems() : " "}
             </NavLink>
           </Nav>
         </Navbar.Collapse>

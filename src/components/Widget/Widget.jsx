@@ -4,11 +4,11 @@ import { FiShoppingCart } from 'react-icons/fi'
 
 function Widget() {
   return (
-   
+
 
     <FiShoppingCart />
-  
-    
+
+
   )
 }
 
