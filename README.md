@@ -66,6 +66,9 @@ Funcionalidad: Funciones para manipulación de productos en el cart (agregar, li
 - Javascript
 - NodeJs v16.14.2
 
+## Deploy
+
+El deployment de la página se encuentra en  [Netlify]( https://relaxed-rolypoly-d19ad7.netlify.app) 
 
 
 ## Código fuente / Versionado
