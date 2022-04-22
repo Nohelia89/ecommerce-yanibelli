@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# IT Shop
+## Soluciones Informaticas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+>It Shop es una aplicación creada con la finalidad de obtener una solución de tipo >e-commerce para una tienda que se especialice en artículos informáticos. 
+>Siendo la misma adaptable a otras áreas en caso de ser requerido.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Funcionalidades
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Componente:Cart 
+Ruta: /cart 
+Funcionalidad: Visualizar productos seleccionados, descripción, precio total, cantidad. 
+Se muestra el precio total de la compra y permite proceder a confirmar la misma a través de un botón o regresar a la pantalla principal en caso de querer seguir agregando productos.
+Desde la misma se puede vaciar el carrito o eliminar puntualmente los items seleccionados. En caso de realizar la compra de más de un producto, se suman las cantidades del mismo.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Componente: Item
+Funcionalidad: Contiene la estructura de las tarjetas de producto mostrar en otros componentes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Componente:ItemCount
+Funcionalidad: Contiene las operaciones vinculadas a la cantidad de productos. Controla cantidad sobre stock.
 
-### `npm run eject`
+- Componente: ItemDetail
+Funcionalidad: Contiene una tarjeta con la información detallada de cada producto. Además desde dicha tarjeta es posible agregar productos y cantidades al carrito.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Componente: ItemList
+Funcionalidad: Lista los productos. Realiza para esto llamadas al componente item.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Componente: NavBar
+Funcionalidad: Navegabilidad entre funcionalidades.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Componente: User
+Ruta: /user
+Funcionalidad: Confirma la compra. Despliega un formulario en el que se ingresan los datos del cliente. Se conecta al servidor de Firebase, donde almacena la información obtenida en la base de datos del mismo (Items, cliente, fecha de compra, precio total). Devuelve en pantalla en forma de alert, el número de orden correspondiente a la compra realizada.
+Actualización de stock posterior a la compra en la base de datos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+- Componente: Widget
+Funcionalidad: El widget en el navbar nos muestra en simultáneo la cantidad de productos que hay en el carrito.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Componente: ItemDetailContainer
+Ruta: /product/id
+Funcionalidad: Muestra en pantalla el detalle del producto solicitado.En caso de que el producto no exista, muestra un mensaje y habilita la redirección a la raíz.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Componente: ItemListContainer
+Ruta: /
+Ruta: /category/:nomCategoría
+Funcionalidad: Lista desde Firebase los productos existentes, filtra por categoría en caso de solicitarse. 
+En caso de que se ingrese una url equivocada, la aplicación redirigirá a este componente.
 
-### Analyzing the Bundle Size
+- Context: CartContext
+Funcionalidad: Funciones para manipulación de productos en el cart (agregar, limpiar carrito, total de productos en el carrito, precio total, eliminar item.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Tecnologías
 
-### Advanced Configuration
+- React
+- Javascript
+- NodeJs v16.14.2
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Código fuente / Versionado
 
-### `npm run build` fails to minify
+El código fuente y versionado de la página se encuentra en un repositorio público en [GitHub](https://github.com/Nohelia89/ecommerce-yanibelli.git) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Librerías
+
+
+| Librería | Link | Utilidad |
+| ------ | ------ |------ |
+| React Bootstrap| [https://es.reactjs.org/][PlDb] | Diseño, estilo de la aplicación web.
+| Firebase | [https://firebase.google.com/][PlGh] | Almacenamiento de información. Reemplaza Backend.
+|React Icons | [https://react-icons.github.io/react-icons/][PlGd] | Widget de carrito en Navbar.
+| React Router DOM | [https://reactrouter.com/][PlOd] |Navegabilidad entre los componentes.
+
+
+## Instalación
+
+##### Tecnologías
+
+
+
+
+Instalación React
+
+```sh
+npx create-react-app ecommerce
+```
+
+##### Librerías
+
+Instalacion React-Bootstrap
+```sh
+ npm install react-bootstrap bootstrap@5.1.3
+
+```
+Instalacion Firebase
+```sh
+npm install firebase
+```
+
+Instalacion React Icons
+```sh
+npm install react-icons
+```
+
+Instalacion React Router Dom
+```sh
+npm i react-router-dom
+```
+##### Developer: 
+Nohelia Yanibelli
