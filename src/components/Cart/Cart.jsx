@@ -29,7 +29,7 @@ function Cart() {
           <tr>
             <td>{prod.quantity}</td>
             <td>{prod.name}</td>
-            <td>{prod.price}</td>
+            <td>US${prod.price}</td>
             <td>     <Button variant="dark" onClick={() => removeItem(prod.id)}>X</Button></td>
           </tr>
 
@@ -41,7 +41,7 @@ function Cart() {
           <tbody >
 
             <td><h6>Total de su compra:</h6></td>
-            <td>{totalPrice()}</td>
+            <td>US${totalPrice()}</td>
 
 
 
