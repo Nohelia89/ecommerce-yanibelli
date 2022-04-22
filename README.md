@@ -80,10 +80,10 @@ El código fuente y versionado de la página se encuentra en un repositorio púb
 
 | Librería | Link | Utilidad |
 | ------ | ------ |------ |
-| React Bootstrap| [https://es.reactjs.org/][PlDb] | Diseño, estilo de la aplicación web.
-| Firebase | [https://firebase.google.com/][PlGh] | Almacenamiento de información. Reemplaza Backend.
-|React Icons | [https://react-icons.github.io/react-icons/][PlGd] | Widget de carrito en Navbar.
-| React Router DOM | [https://reactrouter.com/][PlOd] |Navegabilidad entre los componentes.
+| React Bootstrap| [https://es.reactjs.org/] | Diseño, estilo de la aplicación web.
+| Firebase | [https://firebase.google.com/]| Almacenamiento de información. Reemplaza Backend.
+|React Icons | [https://react-icons.github.io/react-icons/] | Widget de carrito en Navbar.
+| React Router DOM | [https://reactrouter.com/] |Navegabilidad entre los componentes.
 
 
 ## Instalación
