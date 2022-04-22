@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import { ListGroup } from 'react-bootstrap'
+import Table from 'react-bootstrap/Table'
 import { useCartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom';
 
@@ -15,13 +15,42 @@ function Cart() {
   return (
     <div>
 
-      <ListGroup> {cartList.map(prod =>
-        <ListGroup.Item
-          key={prod.id}> Cantidad: {prod.quantity} / Nombre: {prod.name} / Precio: u$s {prod.price}
+      <Table striped bordered hover variant="light" style={{ padding: 10 }}>
+
+        <thead>
+          <tr>
+            <th>Cantidad</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        {cartList.map(prod => <tbody key={prod.id} >
+          <tr>
+            <td>{prod.quantity}</td>
+            <td>{prod.name}</td>
+            <td>{prod.price}</td>
+            <td>     <Button variant="dark" onClick={() => removeItem(prod.id)}>X</Button></td>
+          </tr>
+
+        </tbody>)}
+
+        {cartList.length > 0 ?
 
 
-          <Button variant="dark" onClick={() => removeItem(prod.id)}>X</Button>
-        </ListGroup.Item>)}</ListGroup>
+          <tbody >
+
+            <td><h6>Total de su compra:</h6></td>
+            <td>{totalPrice()}</td>
+
+
+
+          </tbody>
+          : null}
+      </Table>
+
+
+
 
       {cartList.length ?
 
@@ -29,15 +58,16 @@ function Cart() {
 
 
 
-          <div>
-            <div>
-              El total de su compra es de : u$s{totalPrice()}
+          <div style={{ margin: 250 }}>
+            <div   >
+
+
             </div>
-            <div style={{ margin: 200 }} >
-              <Button style={{ margin: 15 }} variant="dark" onClick={clear}>Vaciar Carrito</Button>
+            <div style={{ margin: 0 }} >
+              <Button style={{ margin: 10 }} variant="dark" onClick={clear}>Vaciar Carrito</Button>
 
               <Link to='/User'>
-                <Button style={{ margin: 15 }} variant="dark"  >Confirmar Compra</Button>
+                <Button style={{ margin: 10 }} variant="dark"  >Confirmar Compra</Button>
               </Link>
             </div>
           </div>

@@ -20,7 +20,9 @@ function CartContextProvider({ children }) {
         const found = cartList.find(prod => prod.id === item.id);
         if (found) {
             found.quantity += item.quantity
-       
+            const cartUpdate = [...cartList]
+            setCartList(cartUpdate)
+
         }
         else {
             setCartList([...cartList, item])
@@ -44,7 +46,7 @@ function CartContextProvider({ children }) {
 
 
     const totalItems = () => {
-        
+
         return cartList.reduce((prevValue, prod) => prevValue += prod.quantity, 0)
     }
 
